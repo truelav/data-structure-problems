@@ -34,6 +34,8 @@
  * @param {TreeNode} root
  * @return {number}
  */
+
+
 var maxDepth = function(root) {
     
     if (root === null ){
@@ -43,3 +45,20 @@ var maxDepth = function(root) {
     return Math.max(maxDepth(root.left), maxDepth(root.right)) + 1
     
 };
+
+
+
+// Solution in Python
+
+// class Solution:
+//     def maxDepth(self, root):
+//         """
+//         :type root: TreeNode
+//         :rtype: int
+//         """ 
+//         if root is None: 
+//             return 0 
+//         else: 
+//             left_height = self.maxDepth(root.left) 
+//             right_height = self.maxDepth(root.right) 
+//             return max(left_height, right_height) + 1 
