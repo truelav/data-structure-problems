@@ -62,3 +62,5 @@ var transformArray = (arr) => {
     }
     return ans;
 };
+
+// Solution 2
