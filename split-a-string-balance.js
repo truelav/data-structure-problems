@@ -32,7 +32,7 @@
 // Output: 2
 // Explanation: s can be split into "RL", "RRRLLRLL", since each substring contains an equal number of 'L' and 'R'
 
-// SOLUTION
+// SOLUTION 1
 
 
 /**
@@ -58,7 +58,6 @@ var balancedStringSplit = function(s) {
     
     return result
 };
-
 
 
 // Runtime: 60 ms, faster than 50.39% of JavaScript online submissions for Split a String in Balanced Strings.
