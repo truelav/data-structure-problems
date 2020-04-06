@@ -22,6 +22,7 @@
 
 
 // Solution 1:
+// Not optimal solution
 
 /**
  * @param {number[]} nums
