@@ -19,33 +19,21 @@
  * @return {number}
  */
 var minPathSum = function(grid) {
-    
-    let copy = [];
-
-    for (let i = 0; i < grid.length; i++){
-        copy.push([])
-        for (let k = 0; k < grid[0].length; k++){
-            copy[i].push(grid[i][k])
-        }
-    }
-    
-
     for (let i = grid.length - 1; i >= 0; i--){
         for (let k = grid[0].length - 1; k >= 0; k--){
             if (i === grid.length - 1 && k === grid[0].length - 1){
-                copy[i][k] = copy[i][k]
+                grid[i][k] = grid[i][k]
             } else if (k === grid[0].length - 1){
-                copy[i][k] = copy[i][k] + copy[i+ 1][k]
+                grid[i][k] = grid[i][k] + grid[i+ 1][k]
             } else if (i === grid.length - 1){
-                copy[i][k] = copy[i][k] + copy[i][k + 1]
+                grid[i][k] = grid[i][k] + grid[i][k + 1]
             } else {
-                copy[i][k] = Math.min(copy[i][k] + copy[i][k + 1], copy[i][k] + copy[i+ 1][k])
+                grid[i][k] = Math.min(grid[i][k] + grid[i][k + 1], grid[i][k] + grid[i+ 1][k])
             }
             
         }
     }
 
     
-    return copy[0][0];
-    
+    return grid[0][0];
 };
