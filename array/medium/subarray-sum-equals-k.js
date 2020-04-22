@@ -31,4 +31,27 @@ var subarraySum = function(nums, k) {
 
 
 // Aproach 2 Hash
-
+var subarraySum = function(nums, k) {
+    
+    let sum = 0;
+    let result = 0;
+    let hash = {0 : 1};
+    
+    for (let i = 0; i < nums.length; i++){
+        
+        sum += nums[i];
+        
+        if (hash[sum - k]){
+            result += hash[sum - k]
+        }
+        
+        if (!hash[sum]){
+            hash[sum] = 1;
+        } else {
+            hash[sum]++
+        }
+    }
+    
+    return result
+    
+};
